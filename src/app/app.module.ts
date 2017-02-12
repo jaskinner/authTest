@@ -3,10 +3,13 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import {routing, appRoutingProviders} from './app.routing';
+import {AUTH_PROVIDERS} from 'angular2-jwt';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { ProfileComponent } from './profile/profile.component';
+
+import {Auth} from './services/auth.service';
 
 @NgModule({
   declarations: [
@@ -20,7 +23,7 @@ import { ProfileComponent } from './profile/profile.component';
     HttpModule,
     routing
   ],
-  providers: [appRoutingProviders],
+  providers: [appRoutingProviders, AUTH_PROVIDERS, Auth],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
