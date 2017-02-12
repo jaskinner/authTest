@@ -1,91 +1,31 @@
-# Login
+# AuthTest
 
-This example shows how to add ***Login/SignUp*** to your application using `Lock` widget.
+This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.28.3.
 
-You can read a quickstart for this sample [here](https://auth0.com/docs/quickstart/spa/angular2/01-login). 
+## Development server
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Getting Started
+## Code scaffolding
 
-Rename the `auth0.config.ts.example` file in the `app` directory to `auth0.config.ts` and provide your Auth0 client ID and domain.
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive/pipe/service/class/module`.
 
-Install the npm packages described in the package.json and verify that it works:
+## Build
 
-```bash
-# Install the dependencies
-npm install
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
 
-# Run
-npm start
-```
+## Running unit tests
 
-The npm start command first compiles the application, then simultaneously re-compiles and runs the lite-server. Both the compiler and the server watch for file changes.
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-Shut it down manually with Ctrl-C.
+## Running end-to-end tests
 
-You're ready to write your application.
+Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+Before running the tests make sure you are serving the app via `ng serve`.
 
-## Important Snippets
+## Deploying to GitHub Pages
 
-### 1. Add lock dependency
+Run `ng github-pages:deploy` to deploy to GitHub Pages.
 
-```html
-/* ===== ./index.html ===== */
-<head>
-  ...
-  <!-- Auth0 Lock script -->
-  <script src="http://cdn.auth0.com/js/lock/10.7/lock.min.js"></script>
-  ...
-</head>
-```
+## Further help
 
-### 2. Login with lock
-
-```typescript
-/* ===== app/auth.service.ts ===== */
-@Injectable()
-export class Auth {
-  // Configure Auth0
-  lock = new Auth0Lock('YOUR_CLIENT_ID', 'YOUR_DOMAIN', {});
-
-  constructor() {
-    // Add callback for lock `authenticated` event
-    this.lock.on('authenticated', (authResult) => {
-      localStorage.setItem('id_token', authResult.idToken);
-    });
-  }
-
-  public login() {
-    // Call the show method to display the widget.
-    this.lock.show();
-  };
-  ...
-}
-```
-
-## What is Auth0?
-
-Auth0 helps you to:
-
-* Add authentication with [multiple authentication sources](https://docs.auth0.com/identityproviders), either social like **Google, Facebook, Microsoft Account, LinkedIn, GitHub, Twitter, Box, Salesforce, among others**, or enterprise identity systems like **Windows Azure AD, Google Apps, Active Directory, ADFS or any SAML Identity Provider**.
-* Add authentication through more traditional **[username/password databases](https://docs.auth0.com/mysql-connection-tutorial)**.
-* Add support for **[linking different user accounts](https://docs.auth0.com/link-accounts)** with the same user.
-* Support for generating signed [JSON Web Tokens](https://docs.auth0.com/jwt) to call your APIs and **flow the user identity** securely.
-* Analytics of how, when and where users are logging in.
-* Pull data from other sources and add it to the user profile, through [JavaScript rules](https://docs.auth0.com/rules).
-
-## Create a free account in Auth0
-
-1. Go to [Auth0](https://auth0.com) and click Sign Up.
-2. Use Google, GitHub or Microsoft Account to login.
-
-## Issue Reporting
-
-If you have found a bug or if you have a feature request, please report them at this repository issues section. Please do not report security vulnerabilities on the public GitHub issue tracker. The [Responsible Disclosure Program](https://auth0.com/whitehat) details the procedure for disclosing security issues.
-
-## Author
-
-[Auth0](auth0.com)
-
-## License
-
-This project is licensed under the MIT license. See the [LICENSE](LICENSE) file for more info.
+To get more help on the `angular-cli` use `ng help` or go check out the [Angular-CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
